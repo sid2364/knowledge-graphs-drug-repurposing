@@ -1,1 +1,1 @@
-# knowledge-graph-drug-repurposing
+# knowledge-graphs-drug-repurposing
