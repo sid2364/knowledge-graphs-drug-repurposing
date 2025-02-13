@@ -2,3 +2,9 @@
 2. What does link prediction actually entail? Does it mean coming up with new relationships/paths/nodes? Can I see this in practice somewhere? Is there code I can go through that does this at a small scale to get an intuition?
 3. Pointers to potential future work? Finding side effects of proposed drugs? Finding combinations of drugs that "amplify" effect, or don't work well together? 
 4. 
+
+
+Pathways - gene 
+
+Structure of report:
+Limitations, future work, summaries of techniques. Which methods exist for KGs and KGs for drug repurposing?
