@@ -8,3 +8,17 @@ Pathways - gene
 
 Structure of report:
 Limitations, future work, summaries of techniques. Which methods exist for KGs and KGs for drug repurposing?
+
+
+1. Which embeddings are used most in practice? Which ones have we (at ULB) used in the past for our research?
+2. What do these similarity matrices mean in "2020 Biological applications of knowledge graph embedding models"? Page 9 - how do you read these graphs?
+
+
+t-distributed stochastic neigbor embedding
+PCA - ?
+
+Next steps:
+1. Finish overview Latex
+2. Outline of the prep work/review, narrative, connect diff pieces
+    - look at the review paper again for the structure
+3. Figure out future work
