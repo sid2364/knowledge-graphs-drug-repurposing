@@ -19,6 +19,7 @@ PCA - ?
 
 Next steps:
 1. Finish overview Latex
+2. Go over the KGE paper Inas shared
 2. Outline of the prep work/review, narrative, connect diff pieces
     - look at the review paper again for the structure
 3. Figure out future work
