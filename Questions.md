@@ -23,3 +23,25 @@ Next steps:
 2. Outline of the prep work/review, narrative, connect diff pieces
     - look at the review paper again for the structure
 3. Figure out future work
+
+
+More questions:
+1. The predictions and connections that result from a ML algo - how are they actually verified exerimentally? what is the criteria for them to qualify for this? do we work with any bio lab for this?
+2. Scope of master thesis work
+3. How KG data is validated/do we just take it for what it is (it's out of scope for us)
+4. 
+
+
+Flow of prep work for master thesis:-
+1. Background and objective of the thesis, I can talk about what knowledge graphs and KGEs are. What drug repurposing means and why it's important, and how KG/KGEs can be used for this purpose. TODO Do I need to explain the different KGEs or assume that is not in scope?
+2. Notation/abbreviations? TODO Check if there are any non-obvious ones
+3. State-of-the-art overview: what different methods and approaches have been used, and how successful are they? What methods have been used in ensemble? Prob the biggest part of the report. ALso mention XAI in this: Explainability and XAI, why it's relevant in this field. Maybe could be a part of the previous section.
+4. What are the problems in drug repurposing? Why is it hard, and what limitations do KG/KGEs have? What is the basic problem(s) we need to solve, what makes this difficult? 
+6. In response to 3: Which of these methods show the most promise, what are their limitations and what could possible solutions to these problems be?
+7. Preliminary testing of some methods, and how promising results could be, comparison?
+8. Concrete directions the master thesis could take, or at least next steps of investigations?
+
+
+Next steps:
+1. Find 3-4 papers I like and see what changes i could propose to make. Small presentation for Prof Tom
+2. Start writing the report
