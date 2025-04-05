@@ -37,11 +37,28 @@ Flow of prep work for master thesis:-
 2. Notation/abbreviations? TODO Check if there are any non-obvious ones
 3. State-of-the-art overview: what different methods and approaches have been used, and how successful are they? What methods have been used in ensemble? Prob the biggest part of the report. ALso mention XAI in this: Explainability and XAI, why it's relevant in this field. Maybe could be a part of the previous section.
 4. What are the problems in drug repurposing? Why is it hard, and what limitations do KG/KGEs have? What is the basic problem(s) we need to solve, what makes this difficult? 
-6. In response to 3: Which of these methods show the most promise, what are their limitations and what could possible solutions to these problems be?
-7. Preliminary testing of some methods, and how promising results could be, comparison?
-8. Concrete directions the master thesis could take, or at least next steps of investigations?
+5. In response to 3: Which of these methods show the most promise, what are their limitations and what could possible solutions to these problems be?
+6. Preliminary testing of some methods, and how promising results could be, comparison?
+7. Concrete directions the master thesis could take, or at least next steps of investigations?
 
 
 Next steps:
 1. Find 3-4 papers I like and see what changes i could propose to make. Small presentation for Prof Tom
 2. Start writing the report
+
+
+
+-> Incorporate the schema into how i figure out the 
+
+data -> embedding method -> features -> classifier? -> link-prediction for drug-to-disease
+
+embedding method can have various inputs: random walks, RL with random walks, other?
+classifier can be various things: SVM (best performance), NN, RL, CNN, GNN, XGBoost, etc.
+
+
+Questions for Inas:
+1. are we building a classifier, where the classes are the output diseases and the inputs are drugs?
+2. citations - are 64 enough?
+3. ablation testing - some papers do not have this, so hard to judge them empirically
+4. how do you visualise embeddings esp random walk embeddings?
+5. gut feeling about research direction, what areas still need to be explored?
