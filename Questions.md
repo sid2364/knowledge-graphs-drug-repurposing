@@ -57,8 +57,28 @@ classifier can be various things: SVM (best performance), NN, RL, CNN, GNN, XGBo
 
 
 Questions for Inas:
-1. are we building a classifier, where the classes are the output diseases and the inputs are drugs?
+1. we are building a classifier right? where the classes are the output diseases and the inputs are drugs?
 2. citations - are 64 enough?
 3. ablation testing - some papers do not have this, so hard to judge them empirically
 4. how do you visualise embeddings esp random walk embeddings?
 5. gut feeling about research direction, what areas still need to be explored?
+
+
+KGE models:
+random walk vs scoring func (50, 100, 200 dimensions?)
+
+some random walk method
+transE
+distmult(prefered)/complEx
+another path based one?
+
+to combine drug+disease vectors, just concat (always same order)
+
+
+
+classifiers:
+svm
+mlp/gnn
+xgboost
+
+
