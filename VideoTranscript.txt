@@ -1,0 +1,56 @@
+Hello, I’m Siddharth Sahay. In this video, I'll be talking through my work so far around my topic of "Knowledge Graphs and Drug Repurposing,” in preparation for the master-thesis that begins in the next academic year.
+
+> next slide
+
+This is the outline for this short presentation. I'll go over what drug repurposing is, then why we use knowledge graphs and knowledge graph embeddings. Then go over the most common techniques in the state of the art. Next, I will present some KGs in the public sphere which may be used for my work next year. Next are most common evaluation metrics, then the main challenges the field is faced with, and finally I will present a rough plan for the next year in terms of execution. 
+
+> next slide
+
+Drug discovery has a maths problem. Currently, we recognise around seven thousand rare diseases, but less than six percent of them have an approved therapy, and conventional pipelines still cost up to two-and-a-half billion dollars per drug, with a decade or more of laboratory time. Repurposing existing molecules can short-circuit much of that cost and time, but the search space of possible drug to disease links is absolutely massive, which is why the field of drug repurposing exists. Specifically, using knowledge graphs and knowledge graph embeddings to organise this space, and then systematically and scalably find drug candidates that could be used in novel ways to treat existing diseases.
+
+> next slide
+
+To quickly recap what knowledge graphs are: imagine a huge network where drugs, diseases, genes, and biological pathways are connected based on known relationships. Each of these connections represents meaningful biological knowledge. This kind of representation helps humans understand complex relationships intuitively. But computers like numbers.
+
+> next slide
+
+The graph shown is the schema of Hetionet, one of the largest public biomedical knowledge graphs. As you can see in Figure B, the gene gene interaction network is among the densest, but so is the anatomy network. My work will be to relate existing compounds or molecules with diseases.
+
+> next slide
+
+For machine learning models to fully understand KGs, they must be represented in a form they can better understand. This is where knowledge graph embeddings come in. Embeddings translate every node and every connection into high-dimensional vector space. This makes it possible to apply machine learning to predict new drug-disease relationships that aren’t explicitly known or even obvious. There are many embedding methods that use vastly different techniques to represent information in knowledge graphs. Some of them are TransE, ComplEx, RotatE which are translational embeddings, like the ones shown in the Figure below. Others take a path-based approach like random walk algorithms. 
+
+> next slide
+
+The state of the art can be broadly grouped into a few families of techniques. First, there are traditional machine learning pipelines that transform the graph into numeric representations and then run these through standard machine learning models, like boosted decision trees. Additionally, there are others like DREAMwalk that use path based approach coupled with a semantic guided teleportation to bypass the dense protein-protein interaction network. Recently, graph neural networks have also become very popular because they naturally understand and use the relationships and local structure of the graph. And then there are Large language model approaches, DrugChat for example takes a molecule as input which is processed by a pre-trained GNN to obtain an embedding which is then adapted into a format understandable by the LLM. It then uses the prompt and the modified embedding to generate an answer.
+
+> next slide
+
+The general machine learning pipeline follows this schema of using the KG, pre-processing it, then running it through an embedding model which gives us the KG represented in vector space. These becomes features for the classification model. This will be the base pipeline for my work next year as well before adding customisations. 
+
+> next slide
+
+Interpretability is at the heart of bioinformatics. Making the predictions that these models produce transparent is imperative in order to build trust. Clinicians don't just want predictions; they need explanations and biological rationales that justify why a particular drug should work against a certain disease before spending valuable time on laboratory testin.
+
+> next slide
+
+Of course, none of these powerful methods work without a strong data foundation. We have several well-known biomedical knowledge graphs at our disposal. Hetionet, for example, is widely used and contains tens of thousands of biological entities. Recently, larger graphs like PharMeBINet and the Clinical Knowledge Graph have emerged, each containing millions of nodes and hundreds of millions of connections. 
+
+> next slide
+
+Evaluating whether our models actually work is crucial. Typically, we use metrics that measure how accurately these models can distinguish real drug-disease relationships from random pairs. Metrics like the area under the ROC and Precision-Recall curves give us insight into overall accuracy, while ranking metrics such as Hits@K tell us whether the most promising drug candidates reliably rise to the top of the predictions—exactly what we care about from a clinical perspective.
+
+> next slide
+
+Despite this progress, the field still faces significant challenges. First, there's an inherent bias due to the overwhelming number of protein-protein interactions compared to other types of relationships, something I pointed out earlier when we saw Hetionet. This imbalance can overshadow more clinically useful connections between drugs and diseases. Secondly, keeping our knowledge graphs updated is a constant struggle—biomedical knowledge advances rapidly, and integrating new discoveries into existing knowledge graphs is often slow and incomplete. Moreover, understanding relationships beyond second-order neighbourhood is difficult since the branching that occurs at this level makes it computationally explosive. Finally, the interpretability of these models remains a challenge because most machine learning models have not been built with this at the top of mind.
+
+> next slide
+
+With all this in mind, my plan for the thesis year is structured in clear stages. In the first quarter, I'll reproduce and benchmark several widely-used embedding methods—like TransE, DistMult, ComplEx, and random walk-based approaches—to compare fairly their performance under the same conditions. Then, in the second quarter, I'll investigate how these methods can handle diseases caused by multiple gene variants, which is an increasingly important area, especially for rare genetic disorders.
+
+By Q3, I'll move on to designing or adapting a new model that not only perform well but are also interpretable. Finally, the last quarter is set aside for detailed testing, analysis, and writing the findings, with room built in to handle unexpected issues.
+
+> next slide
+
+Thank you for listening, and I look forward to making progress on this area in the coming year.
+
