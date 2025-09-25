@@ -1,4 +1,4 @@
-# for extracting massive big Neo4j-style PharMeBINet TSVs
+# for extracting massive Neo4j-style PharMeBINet TSVs
 import os
 from pathlib import Path
 import pandas as pd
@@ -109,12 +109,16 @@ def main():
 
         # Rename and basic cleaning
         chunk = chunk.rename(columns={"start_id":"head", "type":"relation", "end_id":"tail"})
+
         # drop empties
         chunk = chunk[(chunk["head"]!="") & (chunk["relation"]!="") & (chunk["tail"]!="")]
-        # drop self-loops
-        chunk = chunk[chunk["head"] != chunk["tail"]]
+
+        # drop self-loops (or not!!! turns out PharMeBINet does have self loops)
+        # chunk = chunk[chunk["head"] != chunk["tail"]]
+
         # normalize relation case
-        chunk["relation"] = chunk["relation"].str.lower()
+        # chunk["relation"] = chunk["relation"].str.lower()
+
         # Drop exact duplicates within chunk
         chunk = chunk.drop_duplicates()
 
@@ -146,10 +150,17 @@ def main():
     entity2id.to_csv(ENTITY2ID_OUT, index=False)
     relation2id.to_csv(RELATION2ID_OUT, index=False)
 
-    print(f"[done] triples:\t\t{TRIPLES_OUT}")
-    print(f"[done] entity2id:\t\t{ENTITY2ID_OUT}\t({len(entity2id):,} entities)")
-    print(f"[done] relation2id:\t\t{RELATION2ID_OUT}\t({len(relation2id):,} relations)")
-    print(f"[done] entity_types:\t\t{ENTITY_TYPES_OUT}")
+    # count triples
+    triple_count = sum(1 for _ in open(TRIPLES_OUT)) - 1  # minus header
+    entity_types_df = pd.read_csv(ENTITY_TYPES_OUT, dtype=str)
+    entity_types_count = len(entity_types_df)
+    unique_labels_count = entity_types_df["label"].nunique()
+
+    print("-"*20)
+    print(f"triples: {TRIPLES_OUT}  ({triple_count:,} triples)")
+    print(f"entity2id: {ENTITY2ID_OUT} ({len(entity2id):,} entities)")
+    print(f"relation2id: {RELATION2ID_OUT} ({len(relation2id):,} relations)")
+    print(f"entity_types: {ENTITY_TYPES_OUT} ({entity_types_count:,} rows, {unique_labels_count:,} unique labels)")
 
 if __name__ == "__main__":
     main()
