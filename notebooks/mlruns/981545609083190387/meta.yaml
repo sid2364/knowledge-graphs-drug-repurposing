@@ -1,6 +1,0 @@
-artifact_location: file:///home/sid/Study/knowledge-graphs-drug-repurposing/notebooks/mlruns/981545609083190387
-creation_time: 1758889240882
-experiment_id: '981545609083190387'
-last_update_time: 1758889240882
-lifecycle_stage: active
-name: KGE Training (TransE, DistMult and ComplEx) with PharMeBINet
