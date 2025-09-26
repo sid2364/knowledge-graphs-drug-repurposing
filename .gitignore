@@ -4,6 +4,10 @@ kgdr_env/
 # Data
 data/
 
+# But keep directory structure if sh*t hits the fan
+!data/raw/pharmebinet_tsv_2022_08_19_v2/.gitkeep
+!data/processed/pharmebinet/.gitkeep 
+
 # MLFlow runs
 notebooks/mlruns/
 
