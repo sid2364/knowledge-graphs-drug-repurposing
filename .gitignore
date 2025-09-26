@@ -4,4 +4,7 @@ kgdr_env/
 # Data
 data/
 
+# MLFlow runs
+notebooks/mlruns/
+
 
